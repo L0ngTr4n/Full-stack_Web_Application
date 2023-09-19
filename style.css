@@ -2,34 +2,65 @@
 /* small screen */
 @media (min-width: 768px) {
     .dropdown-menu.dropdown-menu-md-columns {
-        column-count: 3; /* Display as three columns */
-        column-gap: 1rem; /* Add some spacing between columns */
+        column-count: 3;
+        /* Display as three columns */
+        column-gap: 1rem;
+        /* Add some spacing between columns */
     }
+
     #Home {
         font-size: x-large;
         margin-right: 30px;
     }
+
     .nav-item {
         margin: 0;
         padding: 0;
     }
+
+    .swiper-container {
+        width: 100%;
+    }
+
+    .swiper-slide {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    /* Add this CSS to your style.css file */
+    .blog-post {
+        max-height: 400px;
+        min-height: 300px;
+        overflow: hidden;
+    }
+
 }
 
 /* big screen */
 @media (min-width: 992px) {
     .dropdown-menu.dropdown-menu-md-columns {
-        column-count: 2; /* Display as three columns */
-        column-gap: 1rem; /* Add some spacing between columns */
+        column-count: 2;
+        /* Display as three columns */
+        column-gap: 1rem;
+        /* Add some spacing between columns */
     }
+
     #Home {
         font-size: x-large;
         margin-right: 30px;
     }
+
     .nav-item {
         margin: 0;
         padding: 0;
         justify-self: center;
         align-self: center;
     }
-}
+    .blog-post {
+        max-height: 400px;
+        min-height: 300px;
+        overflow: hidden;
+    }
 
+}
