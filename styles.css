@@ -1,11 +1,16 @@
 .icon-hover:hover {
-    border-color: #3b71ca !important;
-    background-color: white !important;
-  }
-  
-  .icon-hover:hover i {
-    color: #3b71ca !important;
-  }
+  border-color: #3b71ca !important;
+  background-color: white !important;
+}
+
+.icon-hover:hover i {
+  color: #3b71ca !important;
+}
+
+/* Custom CSS for hover effect */
+#dropdown-hover:hover .dropdown-menu {
+  display: block;
+}
 
 
 .register_page {
@@ -39,19 +44,22 @@
 h2 {
   text-align: center;
 }
+
 label {
   display: block;
   margin-bottom: 5px;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
+
 button {
   background-color: #007bff;
   color: #fff;
@@ -61,6 +69,7 @@ button {
   cursor: pointer;
   width: 100%;
 }
+
 button:hover {
   background-color: #0056b3;
 }
