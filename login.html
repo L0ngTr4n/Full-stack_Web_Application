@@ -4,50 +4,38 @@
 <head>
   <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Customer Registration Page</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- MDB -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="styles.css" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <header>
-    <!-- Jumbotron -->
-    <div class="p-3 text-center bg-white border-bottom">
-      <div class="container">
-        <div class="row gy-3">
-          <!-- Left elements -->
-          <div class="col-lg-2 col-sm-4 col-4">
-            <a href="https://mdbootstrap.com/" target="_blank" class="float-start">
-              <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
-            </a>
-          </div>
     </header>
 
     <body>
-        <div class="login-container">
-            <div class="login-form">
-                <h2>Login to Your Account</h2>
-                <form action="your_login_script.php" method="POST">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" placeholder="e.g.hieunguyen@gmail.com" required>
+        <div class="wrapper">
+          <form action="#" method="POST">
+                <h1>Login</h1>
+                    <div class="input-box">
+                        <input type="text" placeholder="Username" required>
+                        <i class='bx bxs-user'></i>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="e.g.12345678" required>
+                    <div class="input-box">
+                        <input type="password" placeholder="Password" required>
+                        <i class='bx bxs-lock-alt' ></i>
                     </div>
-                    <button type="submit">Login</button>
-                </form>
-                <div class="options">
-                    <p><a href="">Don't have an account?</a></p>
-                    <p><a href="">Forgot your password?</a></p>
-                </div>
+
+                    <div class="remember-forgot">
+                      <label><input type="checkbox"> Remember me </label>
+                      <a href="#"> Forgot Password? </a>
+                    </div>
+                    
+                    <button type="submit" class="-btn">Login</button>
+
+                    <div class="register-link">
+                      <p> Don't have an account? <a href="#"> Register </a></p>
+                    </div>
+          </form>
             </div>
         </div>
     </body>
