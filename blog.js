@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "The art of storytelling",
       description: "Storytelling is an ancient and powerful way to convey information and connect with others.",
     },
-    // You can continue to add more blog posts here
+    //add more blog posts here
   ];
   
 

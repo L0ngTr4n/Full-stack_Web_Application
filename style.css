@@ -28,11 +28,11 @@
         border-radius: 5px;
     }
 
-    /* Add this CSS to your style.css file */
     .blog-post {
         max-height: 400px;
         min-height: 300px;
         overflow: hidden;
+        background-color: #f0f0f0;
     }
 
 }
