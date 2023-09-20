@@ -1,3 +1,7 @@
+html{
+    background: #eee;
+}
+
 .product-container {
     display: flex;
     flex-wrap: wrap;
@@ -6,13 +10,18 @@
 
 /* Define the layout for the product boxes */
 .product-box {
+    background: white;
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px;
     width: 30%; /* Adjust the width to fit three columns */
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     vertical-align: top;
     box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 /* Style for product images */
