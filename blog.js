@@ -6,23 +6,21 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    slidesPerView: "auto", // Display all available slides by default
     breakpoints: {
-      // When the viewport width is 768px or larger
+      // Define your breakpoints here
       768: {
         slidesPerView: 2,
       },
-      // When the viewport width is 992px or larger
       992: {
         slidesPerView: 3,
       },
-      // When the viewport width is 1200px or larger
       1200: {
         slidesPerView: 4,
       },
     },
   });
   
-
   // Sample blog post data
   const blogPosts = [
     {
