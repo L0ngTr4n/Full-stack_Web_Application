@@ -4,11 +4,13 @@ html{
     margin: 0;
 }
 
-.product-container {
+.product-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 100vh;
+    height: auto; /* Change height to auto to allow content to push footer down */
+    margin-bottom: 20px; /* Add margin to separate the footer */
+    padding: 10px;
 }
 
 /* Define the layout for the product boxes */
@@ -43,16 +45,22 @@ html{
     cursor: pointer;
 }
 
-@media (max-width: 991px) {
-    /* Two columns for tablets */
-    .product-box {
-        width: calc(50% - 20px);
+/* Add this CSS for responsiveness */
+@media screen and (max-width: 768px) {
+    .product-wrapper {
+      flex-direction: column;
     }
-}
-
-@media (max-width: 767px) {
-    /* One column for mobile devices */
+  
+    /* Adjust the width for two columns on tablets 
+    THis thing just refuse to work */
     .product-box {
-        width: 100%;
+      width: 48%;
     }
-}
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Adjust the width for one column on mobile */
+    .product-box {
+      width: 100%;
+    }
+  }
