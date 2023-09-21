@@ -8,6 +8,7 @@ html{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: 100vh;
 }
 
 /* Define the layout for the product boxes */
@@ -15,6 +16,7 @@ html{
     background: white;
     border: 1px solid #ddd;
     margin: 5px;
+    padding: 5px;
     width: 30%; /* Adjust the width to fit three columns */
     display: flex;
     flex-direction: column;
