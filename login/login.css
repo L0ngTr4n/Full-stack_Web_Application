@@ -1,14 +1,11 @@
-:root {
-    --primary-color: #007bff; /* Change this to your primary color */
-}
+/* login.css */
 
-body {
-    background-color: #f8f9fa;
-}
-
+/* Center the login container horizontally and vertically */
 .login-container {
-    margin-top: 100px;
-    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures full viewport height */
 }
 
 .login-card {
@@ -19,7 +16,6 @@ body {
 }
 
 .login-heading {
-    color: var(--primary-color);
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -30,14 +26,14 @@ body {
 }
 
 .form-control {
-    border: 2px solid var(--primary-color);
+    border: 2px solid #007bff;
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: #007bff;
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Darken the primary color on hover */
+    background-color: #0056b3;
 }
