@@ -6,11 +6,21 @@ html{
 .small-img-group{
     display: flex;
     justify-content: space-between;
+    overflow-x: scroll;
+    scroll-snap-type: mandatory;
 }
 
 .small-img-col{
     flex-basis: 24%;
     cursor: pointer;
+    
+}
+
+.small-img{
+    max-width: 123.5px;
+    max-height: auto;
+    scroll-snap-align: center;
+
 }
 
 .sproduct select{
@@ -37,4 +47,22 @@ html{
     color: white;
     opacity: 1;
     transition: 0.3 all;
+}
+
+#related-product a{
+    text-decoration: none;
+    color: black;
+}
+
+#related-product a:hover{
+    text-decoration: underline;
+}
+
+.breadcrumb a{
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb a:hover{
+    text-decoration: underline;
 }
