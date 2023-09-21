@@ -6,21 +6,26 @@ html {
 .small-img-group {
     display: flex;
     justify-content: space-between;
-    overflow-x: scroll;
-    scroll-snap-type: mandatory;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snap scrolling horizontally */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+    background-color: #e7e6e6;
 }
 
 .small-img-col {
-    flex-basis: 24%;
-    cursor: pointer;
-
+    flex: 0 0 calc(33.33% - 10px); /* Each column occupies 33.33% width with a 10px gap */
+    margin-right: 10px; /* Add spacing between columns */
+    scroll-snap-align: start; /* Snap alignment to the start of each item */
+    flex: 0 0 calc(33.33% - 10px);
 }
 
 .small-img {
-    max-width: 123.5px;
+    max-width: 100%;
     max-height: auto;
-    scroll-snap-align: center;
-
+    /* width: 100%; Ensure images fill their containers */
+    height: auto;
+    display: block;
+    box-sizing: border-box;
 }
 
 .sproduct select {
@@ -70,7 +75,8 @@ html {
 .breadcrumb a {
     text-decoration: none;
     color: black;
-    margin: 0px 10px;
+    margin: 0px 3px;
+    font-size: 20px;
 }
 
 .breadcrumb a:hover {
@@ -80,6 +86,16 @@ html {
 .buttons {
     display: flex;
     align-items: center;
+}
+
+.breadcrumb-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically by default */
+  }
+
+.py-4{
+    margin-top: 15px;
+    font-size: 40px;
 }
 
 @media (max-width: 992px) {
@@ -122,7 +138,29 @@ html {
         box-sizing: border-box;
     }
     
-    
+    /* Adjust flex direction for larger screens */
+  .breadcrumb-container {
+    flex-direction: row; /* Display elements side by side */
+    justify-content: space-between; /* Add space between breadcrumb and image */
+    align-items: center; /* Center elements vertically */
+  }
 
+  /* Adjust breadcrumb style for larger screens if needed */
+  .breadcrumb {
+    margin-right: 10px; /* Add spacing between breadcrumb and image */
+  }
+
+  /* Adjust image style for larger screens if needed */
+  .img-fluid {
+    max-width: 100%; /* Reduce image width if necessary */
+  }
+   
+  .py-4{
+    font-size: 50px;
+  }
+  
+  .col-lg-6 h2{
+    font-size: 40px;
+  }
 
 }
