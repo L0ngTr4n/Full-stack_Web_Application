@@ -46,7 +46,7 @@ html{
 }
 
 /* Add this CSS for responsiveness */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .product-wrapper {
       flex-direction: column;
     }
@@ -58,7 +58,7 @@ html{
     }
   }
   
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 768px) {
     /* Adjust the width for one column on mobile */
     .product-box {
       width: 100%;
