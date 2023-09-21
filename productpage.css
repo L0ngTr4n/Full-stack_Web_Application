@@ -119,7 +119,7 @@ html {
         overflow-x: auto; /* Allow horizontal scrolling */
         scroll-snap-type: x mandatory; /* Enable snap scrolling horizontally */
         white-space: nowrap; /* Prevent items from wrapping to the next line */
-        background-color: #e7e6e6;
+        background-color: white;
     }
     
     .small-img-col {
