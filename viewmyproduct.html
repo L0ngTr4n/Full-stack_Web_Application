@@ -53,28 +53,5 @@
 
     <!-- Add more product boxes as needed -->
 
-    <script>
-        // JavaScript for filtering products by category
-        const categoryFilter = document.getElementById('category-filter');
-        const productBoxes = document.querySelectorAll('.product-box');
-
-        categoryFilter.addEventListener('change', () => {
-            const selectedCategory = categoryFilter.value;
-
-            productBoxes.forEach((box) => {
-                const category = box.getAttribute('data-category');
-
-                if (selectedCategory === 'all' || category === selectedCategory) {
-                    box.style.display = 'flex';
-                } else {
-                    box.style.display = 'none';
-                }
-            });
-        });
-
-        // Calculate and display the total number of items
-        const totalItems = productBoxes.length;
-        document.getElementById('total-items').textContent = totalItems;
-    </script>
 </body>
 </html>
