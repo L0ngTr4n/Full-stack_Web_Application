@@ -8,17 +8,6 @@
 </head>
 <body>
 
-    <div class="filter-section">
-        <div>Total Items: <span id="total-items">3</span></div>
-        <label for="category-filter">Filter by Category:</label>
-        <select id="category-filter">
-            <option value="all">All</option>
-            <option value="category1">Category 1</option>
-            <option value="category2">Category 2</option>
-            <!-- Add more category options as needed -->
-        </select>
-    </div>
-
     <div class="product-container">
     <div class="product-box">
         <img class="product-img" src="product1.jpg" alt="Product 1">
@@ -65,28 +54,5 @@
 
     <!-- Add more product boxes as needed -->
 
-    <script>
-        // JavaScript for filtering products by category
-        const categoryFilter = document.getElementById('category-filter');
-        const productBoxes = document.querySelectorAll('.product-box');
-
-        categoryFilter.addEventListener('change', () => {
-            const selectedCategory = categoryFilter.value;
-
-            productBoxes.forEach((box) => {
-                const category = box.getAttribute('data-category');
-
-                if (selectedCategory === 'all' || category === selectedCategory) {
-                    box.style.display = 'flex';
-                } else {
-                    box.style.display = 'none';
-                }
-            });
-        });
-
-        // Calculate and display the total number of items
-        const totalItems = productBoxes.length;
-        document.getElementById('total-items').textContent = totalItems;
-    </script>
 </body>
 </html>

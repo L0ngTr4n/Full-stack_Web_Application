@@ -1,0 +1,56 @@
+html{
+    background: #eee;
+    padding: 0;
+    margin: 0;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Define the layout for the product boxes */
+.product-box {
+    background: white;
+    border: 1px solid #ddd;
+    margin: 5px;
+    width: 30%; /* Adjust the width to fit three columns */
+    display: flex;
+    flex-direction: column;
+    vertical-align: top;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* Style for product images */
+.product-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style for the "Add to Cart" button */
+.add-to-cart {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    /* Two columns for tablets */
+    .product-box {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 767px) {
+    /* One column for mobile devices */
+    .product-box {
+        width: 100%;
+    }
+}
