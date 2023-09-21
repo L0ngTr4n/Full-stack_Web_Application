@@ -1,0 +1,43 @@
+:root {
+    --primary-color: #007bff; /* Change this to your primary color */
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.login-container {
+    margin-top: 100px;
+    max-width: 400px;
+}
+
+.login-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.login-heading {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darken the primary color on hover */
+}
