@@ -28,7 +28,15 @@
                     <label for="confirm_password">Confirm Password</label>
                     <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select class="form-control" id="role" name="role">
+                        <option value="user">Customer</option>
+                        <option value="admin">Vendor</option>
+                        <option value="admin">Shipper</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button> 
             </form>
         </div>
     </div>
