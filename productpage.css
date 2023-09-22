@@ -1,0 +1,166 @@
+html {
+    padding: 0;
+    margin: 0;
+}
+
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snap scrolling horizontally */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+    background-color: white;
+}
+
+.small-img-col {
+    flex: 0 0 calc(33.33% - 10px); /* Each column occupies 33.33% width with a 10px gap */
+    margin-right: 10px; /* Add spacing between columns */
+    scroll-snap-align: start; /* Snap alignment to the start of each item */
+    flex: 0 0 calc(33.33% - 10px);
+}
+
+.small-img {
+    max-width: 100%;
+    max-height: auto;
+    /* width: 100%; Ensure images fill their containers */
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+}
+
+.sproduct select {
+    display: block;
+    padding: 5px 10px;
+}
+
+.sproduct input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.sproduct input:focus {
+    outline: none;
+}
+
+.buy-btn {
+    height: 40px;
+    width: 150px;
+    background: black;
+    color: white;
+    opacity: 1;
+    transition: 0.3 all;
+    margin-right: 10px;
+}
+
+/* Style the wishlist button */
+.wishlist-btn {
+    height: 40px;
+    width: 150px;
+    background: black;
+    color: #fff;
+}
+
+#related-product a {
+    text-decoration: none;
+    color: black;
+}
+
+#related-product a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: black;
+    margin: 0px 3px;
+    font-size: 20px;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically by default */
+  }
+
+.py-4{
+    margin-top: 15px;
+    font-size: 40px;
+}
+
+@media (max-width: 992px) {
+
+    .product {
+        max-width: 25%;
+    }
+
+    .img-fluid {
+        width: 100%;
+    }
+
+    .breadcrumb a {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .small-img-group {
+        display: flex;
+        justify-content: space-between;
+        overflow-x: auto; /* Allow horizontal scrolling */
+        scroll-snap-type: x mandatory; /* Enable snap scrolling horizontally */
+        white-space: nowrap; /* Prevent items from wrapping to the next line */
+        background-color: white;
+    }
+    
+    .small-img-col {
+        flex: 0 0 calc(33.33% - 10px); /* Each column occupies 33.33% width with a 10px gap */
+        margin-right: 10px; /* Add spacing between columns */
+        scroll-snap-align: start; /* Snap alignment to the start of each item */
+        flex: 0 0 calc(33.33% - 10px);
+    }
+    
+    .small-img {
+        max-width: 100%;
+        max-height: auto;
+        /* width: 100%; Ensure images fill their containers */
+        height: auto;
+        display: block;
+        box-sizing: border-box;
+    }
+    
+    /* Adjust flex direction for larger screens */
+  .breadcrumb-container {
+    flex-direction: row; /* Display elements side by side */
+    justify-content: space-between; /* Add space between breadcrumb and image */
+    align-items: center; /* Center elements vertically */
+  }
+
+  /* Adjust breadcrumb style for larger screens if needed */
+  .breadcrumb {
+    margin-right: 10px; /* Add spacing between breadcrumb and image */
+  }
+
+  /* Adjust image style for larger screens if needed */
+  .img-fluid {
+    max-width: 100%; /* Reduce image width if necessary */
+  }
+   
+  .py-4{
+    font-size: 50px;
+  }
+  
+  .col-lg-6 h2{
+    font-size: 40px;
+  }
+
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Shipper Registration Page</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="shipper.css" />
+</head>
+<body>
+  <div class="container register_container">
+      <h2>Shipper Registration</h2>
+      <form action="registration_process.php" method="POST">
+          <div class="form-group">
+              <label for="distributionHub">Distribution Hub</label>
+              <select id="distributionHub" name="distributionHub" required>
+                  <option value="hub1">Ha Noi</option>
+                  <option value="hub2">Ho Chi Minh</option>
+                  <option value="hub3">Da Nang</option>
+              </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Register</button>
+      </form>
+  </div>
+</body>
+</html>
+  

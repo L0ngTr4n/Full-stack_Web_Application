@@ -1,0 +1,66 @@
+html{
+    background: #eee;
+    padding: 0;
+    margin: 0;
+}
+
+.product-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: auto; /* Change height to auto to allow content to push footer down */
+    margin-bottom: 20px; /* Add margin to separate the footer */
+    padding: 10px;
+}
+
+/* Define the layout for the product boxes */
+.product-box {
+    background: white;
+    border: 1px solid #ddd;
+    margin: 5px;
+    padding: 5px;
+    width: 30%; /* Adjust the width to fit three columns */
+    display: flex;
+    flex-direction: column;
+    vertical-align: top;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* Style for product images */
+.product-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style for the "Add to Cart" button */
+.add-to-cart {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Add this CSS for responsiveness */
+@media screen and (max-width: 992px) {
+    .product-wrapper {
+      flex-direction: column;
+    }
+  
+    /* Adjust the width for two columns on tablets 
+    THis thing just refuse to work */
+    .product-box {
+      width: 48%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Adjust the width for one column on mobile */
+    .product-box {
+      width: 100%;
+    }
+  }
