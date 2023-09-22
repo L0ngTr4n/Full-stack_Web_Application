@@ -2,10 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize Swiper for the blog slider
   const blogSlider = new Swiper(".blog-slider", {
     spaceBetween: 20,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
     slidesPerView: "auto", // Display all available slides by default
     breakpoints: {
       // Define your breakpoints here
