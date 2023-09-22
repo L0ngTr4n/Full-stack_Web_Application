@@ -3,8 +3,10 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const ejs = require ("ejs")
+const LogInCollection = require ("./LoginInfo")
+// const mongoose = require ("mongoose")
 // const hbs = require("hbs");
-const LogInCollection = require("./mongo");
+const connect = require("../DB connect/mongo");
 const port = process.env.PORT || 3000;
 app.use(express.json());
 
@@ -14,9 +16,9 @@ const tempelatePath = path.join(__dirname, "../views");
 const publicPath = path.join(__dirname, "../public");
 console.log(publicPath);
 
+
 //SET
 
-// app.set("view engine", "ejs");
 app.set("view engine", "ejs");
 app.set("views", tempelatePath);
 app.use(express.static(publicPath));
@@ -39,7 +41,7 @@ app.get("/login", (req, res) => {
 //POST
 
 app.post("/register", async (req, res) => {
-  const { username, email, password, confirm_password, role } = req.body;
+  const { username, email, password, confirm_password, telephone, role } = req.body;
 
   if (confirm_password != password) {
     alert("Password does not match, enter password again.");
@@ -48,16 +50,17 @@ app.post("/register", async (req, res) => {
       if (result === null) {
         const newUser = new LogInCollection({
           name: username,
-          email: email,
           password: password,
+          email: email,
+          telephone: telephone,
           role: role,
         });
         if (newUser.role == "customer") {
           res.render("customer");
         } else if (newUser.role == "vendor") {
-          res.render("index.ejs");
+          res.render("index");
         } else {
-          res.render("index.ejs");
+          res.render("index");
         }
         newUser
           .save()
