@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>My Product Page</title>
+  <title>My cart page</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
   <!-- Google Fonts Roboto -->
@@ -13,12 +14,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <!-- Custom styles -->
-    <link rel="stylesheet" href="viewmyproduct.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />   
+  <link rel="stylesheet" href="wishlist.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body>
 
-    <!--Main Navigation-->
+<body>
+  <!--Main Navigation-->
   <header>
     <!-- Jumbotron -->
     <div class="p-3 text-center bg-white border-bottom">
@@ -27,7 +31,7 @@
           <!-- Left elements -->
           <div class="col-lg-2 col-sm-4 col-4">
             <a href="https://mdbootstrap.com/" target="_blank" class="float-start">
-              <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
+              <img src="asset\img\Logo.png" id="Logo">
             </a>
           </div>
           <!-- Left elements -->
@@ -35,20 +39,9 @@
           <!-- Center elements -->
           <div class="order-lg-last col-lg-5 col-sm-8 col-8">
             <div class="d-flex float-end">
-              <a href="https://github.com/mdbootstrap/bootstrap-material-design"
-                class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i
-                  class="fas fa-user-alt m-1 me-md-2"></i>
+              <a href="login\login.html" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center"
+                target="_blank"> <i class="fas fa-user-alt m-1 me-md-2"></i>
                 <p class="d-none d-md-block mb-0">Sign in</p>
-              </a>
-              <a href="https://github.com/mdbootstrap/bootstrap-material-design"
-                class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i
-                  class="fas fa-heart m-1 me-md-2"></i>
-                <p class="d-none d-md-block mb-0">Wishlist</p>
-              </a>
-              <a href="https://github.com/mdbootstrap/bootstrap-material-design"
-                class="border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i
-                  class="fas fa-shopping-cart m-1 me-md-2"></i>
-                <p class="d-none d-md-block mb-0">My cart</p>
               </a>
             </div>
           </div>
@@ -163,38 +156,15 @@
     </nav>
     <!-- Navbar -->
 
-    <!-- Product container -->
-    <div class="gallery">
-      <div class="content">
-        <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/1.webp" alt="">
-        <h3>GoPro HERO6 4K Action Camera - Black</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        <h6>Price</h6>
-        <button class="buy-1">More Detail</button>
-      </div>
-
-      <div class="content">
-        <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/1.webp" alt="">
-        <h3>GoPro HERO6 4K Action Camera - Black</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        <h6>Price</h6>
-        <button class="buy-1">More Detail</button>
-      </div>
-
-      <div class="content">
-        <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/1.webp" alt="">
-        <h3>GoPro HERO6 4K Action Camera - Black</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        <h6>Price</h6>
-        <button class="buy-1">More Detail</button>        
-      </div>
-    </div>
 
 
-</body>
 
- <!-- Footer -->
- <footer class="text-center text-lg-start text-muted mt-3" style="background-color: #f5f5f5;">
+
+
+
+
+    <!-- Footer -->
+  <footer class="text-center text-lg-start text-muted mt-3" style="background-color: #f5f5f5;">
     <!-- Section: Links  -->
     <section class="">
       <div class="container text-center text-md-start pt-4 pb-4">
@@ -204,10 +174,10 @@
           <div class="col-12 col-lg-3 col-sm-12 mb-2">
             <!-- Content -->
             <a href="https://mdbootstrap.com/" target="_blank" class="">
-              <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
+              <img src="asset\img\Logo.png" height="35" />
             </a>
             <p class="mt-2 text-dark">
-              © 2023 Copyright:
+              © 2023 Copyright: Dragon Store
             </p>
           </div>
           <!-- Grid column -->
@@ -342,4 +312,6 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="blog.js"></script>
   <script src="product.js"></script>
+</body>
+
 </html>
