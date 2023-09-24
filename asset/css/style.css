@@ -18,6 +18,7 @@ Acknowledgement: ChatGPT, Claude, bootstrap, w3school. */
     height: 35px;
 }
 
+/* blog section */
 #Blog {
     width: 100%;
     overflow-x: auto;
@@ -35,3 +36,8 @@ Acknowledgement: ChatGPT, Claude, bootstrap, w3school. */
 .blog-post {
     scroll-snap-align: center;
 }
+
+/* for profile  */
+#profile-dropdown:hover .dropdown-menu {
+    display: block;
+  }
