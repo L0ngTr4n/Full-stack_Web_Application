@@ -175,13 +175,14 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/add_product", async (req, res) => {
-  const { name, description, price } = req.body;
+  const { title, imgSrc, price, link } = req.body;
 
   // Create a new product document
   const newProduct = new productModel({
-    name: name,
-    description: description,
+    imgSrc: imgSrc,
+    title: title,
     price: price,
+    link: link,
     // Set other product fields as needed
   });
 
@@ -196,6 +197,9 @@ app.post("/add_product", async (req, res) => {
       console.error(error);
     });
 });
+
+
+
 
 //PORT CONNECT
 app.listen(port, () => {

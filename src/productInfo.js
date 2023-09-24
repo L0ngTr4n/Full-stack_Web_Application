@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const productSchema = new mongoose.Schema({
-  productCode: { 
-    type: String,
-    unique: true 
-  },
+  // productCode: { 
+  //   type: String,
+  //   unique: true 
+  // },
 
-  name: {
+  title: {
     type: String,
     required: true,
     unique: true,
@@ -17,10 +17,14 @@ const productSchema = new mongoose.Schema({
   //   type: String,
   //   required: true,
   // },
-  // imgSrc:{
-  // },
 
-  description: {
+  imgSrc:{
+    type: String,
+    required: true,
+    unique: true,
+  },
+
+  link: {
     type: String,
     required: true,
     unique: true,
@@ -48,6 +52,8 @@ const productSchema = new mongoose.Schema({
   //   default: Date.now,
   // },
 });
+
+
 
 // module.exports = mongoose.model("Product", productSchema);
 const productModel = mongoose.model("Product", productSchema);
