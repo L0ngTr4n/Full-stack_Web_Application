@@ -127,7 +127,7 @@ const Vendor = new mongoose.Schema({
 
 const CustomerInfo = mongoose.model("customer", Customer);
 const VendorInfo = mongoose.model("vendor", Vendor);
-const ShipperInfo = mongoose.model("UserInfo", Shipper);
+const ShipperInfo = mongoose.model("shipper", Shipper);
 // const CustomerModel = Userinfo.discriminator('customer', customerSchema);
 // const VendorModel = Userinfo.discriminator('vendor', vendorSchema);
 // const ShipperModel = Userinfo.discriminator('shipper', shipperSchema);

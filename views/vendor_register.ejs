@@ -28,7 +28,7 @@ Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
     <div class="container registration-container">
         <div class="card registration-card">
             <h2 class="registration-heading">Vendor Registration</h2>
-            <form action="/register" method="post">
+            <form action="/vendor_register" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" id="username" name="username"
@@ -47,19 +47,19 @@ Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
                 </div>
                 <div class="form-group">
                     <label for="businessName">Business Name</label>
-                    <input type="text" class="form-control" id="businessName" name="businessName" required
+                    <input type="text" class="form-control" id="businessName" name="bus_name" required
                         placeholder="Enter your business name">
                 </div>
                 <div class="form-group">
                     <label for="businessAddress">Business Address</label>
-                    <input type="text" class="form-control" id="businessAddress" name="businessAddress" required
+                    <input type="text" class="form-control" id="businessAddress" name="bus_address" required
                         placeholder="Enter your business address">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
                 <hr>
                 <!-- <h4 class="text-center">I am</h4> -->
                 <div class="text-center">
-                    <a href="register" class="btn">Customer</a>
+                    <a href="customer_register" class="btn">Customer</a>
                     <a href="shipper_register" class="btn">Shipper</a>
                 </div>
                 <div class="text-center">
