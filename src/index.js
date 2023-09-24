@@ -104,7 +104,7 @@ app.post("/register", async (req, res) => {
   const { username, email, password, role } = req.body;
 
   // Handle the profile picture upload
-  const profilePicture = req.files.profilePicture;
+  // const profilePicture = req.files.profilePicture;
 
   // if (confirm_password != password) {
   //   alert("Password does not match, enter password again.");
@@ -117,10 +117,10 @@ app.post("/register", async (req, res) => {
           email: email,
           // telephone: telephone,
           role: role,
-          profilePicture: {
-            data: profilePicture.data, // Binary image data
-            contentType: profilePicture.mimetype, // MIME type
-          },
+          // profilePicture: {
+          //   data: profilePicture.data, // Binary image data
+          //   contentType: profilePicture.mimetype, // MIME type
+          // },
         });
         if (newUser.role == "customer") {
           res.render("customer");
