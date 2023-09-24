@@ -11,7 +11,28 @@ const Customer = new mongoose.Schema({
   },
   password: {
     type: String,
+    // validate: {
+    //   validator: function (value) {
+    //     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).+$/;
+    //     return regex.test(value);
+    //   },
+
+    //   required: true,
+
+    //   minlength:8,
+
+    //   maxlength:20
+    // },
+    // name: {
+    //   type: String,
+    //   required: true,
+
+    //   message: 'The password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.'
+
+    // },
     required: true,
+    // minlength: 8,
+    // maxlength: 20
   },
   // profilePicture: {
   //   data: Buffer, // Store binary image data
@@ -20,14 +41,15 @@ const Customer = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true,
   },
   address: {
     type: String,
     required: true,
-    unique: true,
-  }
-  
+  },
+  profile_picture: {
+    data: Buffer,
+    contentType: String
+  },
 });
 
 const Shipper = new mongoose.Schema({

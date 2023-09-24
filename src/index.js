@@ -17,7 +17,7 @@ const {
 const productModel = require ("./productInfo")
 
 const connect = require("../DB connect/mongo");
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 1234;
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
@@ -300,7 +300,7 @@ app.post("/login", async (req, res) => {
     return; 
   }
 
-  res.render("Login failed!");
+  res.send("Login failed!");
   
 });
 
