@@ -18,33 +18,25 @@ Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
 <%# Placeholder for order list %>
 <% const orders = [
   {
-    products: ['Product 1', 'Product 2', 'Product 3'],
+    products: ['Electronic device 1', 'Electronic device 2', 'Electronic device 3'],
     price: 250,
     address: 'RMIT University' 
   },
   {
-    products: ['Product 4', 'Product 5', 'Product 6'],
+    products: ['Household good 1', 'Household good 2', 'Household good 3'],
     price: 100,
     address: 'RMIT University' 
   },
   {
-    products: ['Product 7', 'Product 8', 'Product 9'],
+    products: ['Household good 4', 'Household good 5', 'Household good 6'],
     price: 310,
     address: 'RMIT University' 
   },
 ] %>
 
 <main>
-  <div class="container">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb py-2 my-3">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">View Active Orders</li>
-      </ol>
-    </nav>
-  </div>
   <div class="container my-3 py-2">
-    <h2 class="my-3 py-3">My Active Order</h2>
+    <h2 class="my-3 py-3">My Order</h2>
     <table class="table">
       <thead>
         <tr>
@@ -67,6 +59,5 @@ Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
     </table>
   </div>
 </main>
-
 
 <%- include('partials/footer.ejs') %>
