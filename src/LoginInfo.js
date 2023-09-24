@@ -22,7 +22,11 @@ const Customer = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  
+  address: {
+    type: String,
+    required: true,
+    unique: true,
+  }
   
 });
 
@@ -50,6 +54,7 @@ const Shipper = new mongoose.Schema({
     enum: ['Ha Noi','Da Nang','Ho Chi Minh']
   }
 });
+
 
 const Vendor = new mongoose.Schema({
   username: {

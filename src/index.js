@@ -46,9 +46,9 @@ app.get("/login", (req, res) => {
 });
 
 // Route for the customer dashboard
-app.get("/register", (req, res) => {
+app.get("/customer_register", (req, res) => {
   // Render the customer.html view
-  res.render("register");
+  res.render("customer_register");
 });
 
 // Route for the vendor dashboard
@@ -63,9 +63,9 @@ app.get("/shipper_register", (req, res) => {
   res.render("shipper_register");
 });
 
-app.get("/forgotPassword", (req, res) => {
-  res.render("forgotPassword");
-});
+// app.get("/forgotPassword", (req, res) => {
+//   res.render("forgotPassword");
+// });
 
 app.get("/newPassword", (req, res) => {
   res.render("newPassword");
@@ -104,54 +104,53 @@ app.get("/", async (req, res) => {
 
 //POST
 
-app.post("/register", async (req, res) => {
-  const { username, email, password, role } = req.body;
+// app.post("/customer_register", async (req, res) => {
+//   const { username, email, password, role } = req.body;
 
-  // Handle the profile picture upload
-  // const profilePicture = req.files.profilePicture;
+//   // Handle the profile picture upload
+//   // const profilePicture = req.files.profilePicture;
 
-  // if (confirm_password != password) {
-  //   alert("Password does not match, enter password again.");
-  // } else {
-    Userinfo.exists({ name: username }).then((result) => {
-      if (result === null) {
-        const newUser = new Userinfo({
-          username: username,
-          password: password,
-          email: email,
-          // telephone: telephone,
-          // role: role,
-          // profilePicture: {
-          //   data: profilePicture.data, // Binary image data
-          //   contentType: profilePicture.mimetype, // MIME type
-          // },
-          role: String('customer')
-        });
-        // if (newUser.role == "customer") {
-        //   res.render("customer");
-        // } else if (newUser.role == "vendor") {
-        //   res.render("vendor");
-        // } else {
-        //   res.render("shipper");
-        // }
-        if (username === username)
-        newUser
-          .save()
-          .then(() =>
-            console.log("Inserted user with username: ", req.body.username)
-          )
-          .catch((error) => console.log(error));
-      } else {
-        console.log("user already exists!");
-        res.render("user details already exists");
-      }
-    });
-  // }
-});
+//   // if (confirm_password != password) {
+//   //   alert("Password does not match, enter password again.");
+//   // } else {
+//     Userinfo.exists({ name: username }).then((result) => {
+//       if (result === null) {
+//         const newUser = new Userinfo({
+//           username: username,
+//           password: password,
+//           email: email,
+//           // telephone: telephone,
+//           // role: role,
+//           // profilePicture: {
+//           //   data: profilePicture.data, // Binary image data
+//           //   contentType: profilePicture.mimetype, // MIME type
+//           // },
+//         });
+//         // if (newUser.role == "customer") {
+//         //   res.render("customer");
+//         // } else if (newUser.role == "vendor") {
+//         //   res.render("vendor");
+//         // } else {
+//         //   res.render("shipper");
+//         // }
+//         if (username === username)
+//         newUser
+//           .save()
+//           .then(() =>
+//             console.log("Inserted user with username: ", req.body.username)
+//           )
+//           .catch((error) => console.log(error));
+//       } else {
+//         console.log("user already exists!");
+//         res.render("user details already exists");
+//       }
+//     });
+//   // }
+// });
 
-app.post("/vendor_register", async (req, res) => {
-  const { username, email, password, bus_name, bus_address} = req.body;
-Userinfo.exists({ name: username }).then((result) => {
+app.post("/customer_register", async (req, res) => {
+const { username, email, password, address} = req.body;
+CustomerInfo.exists({ name: username }).then(() => {
   console.log("user already exists!");
   res.render("user details already exists");
 })
@@ -159,7 +158,37 @@ Userinfo.exists({ name: username }).then((result) => {
       username: username,
       password: password,
       email: email,
-      role: 'vendor',
+      address: address,
+      
+  })
+  newUser.save();
+})
+
+app.post("/shipper_register", async (req, res) => {
+  const { username, email, password, dis_hub} = req.body;
+ShipperInfo.exists({ name: username }).then(() => {
+  console.log("user already exists!");
+  res.render("user details already exists");
+})
+  const newUser = new Userinfo({
+      username: username,
+      password: password,
+      email: email,
+      dis_hub: dis_hub,
+  })
+  newUser.save();
+})
+
+app.post("/vendor_register", async (req, res) => {
+  const { username, email, password, bus_name, bus_address} = req.body;
+VendorInfo.exists({ name: username }).then(() => {
+  console.log("user already exists!");
+  res.render("user details already exists");
+})
+  const newUser = new Userinfo({
+      username: username,
+      password: password,
+      email: email,
       bus_address: bus_address,
       bus_name: bus_name,
   })
