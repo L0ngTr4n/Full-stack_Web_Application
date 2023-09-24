@@ -1,0 +1,120 @@
+<!-- RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: Nguyen Ha Tuan Nguyen
+Nguyen Hai Nguyen
+Le Ha My
+Tran Duc Long
+Nguyen Minh Hieu
+ID: S3978072
+S3978275
+S3938177
+S3978673
+S3978107
+Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
+
+
+<%- include('partials/header.ejs') %>
+
+    <!-- /*Feature*/ -->
+    <section class="container sproduct my-5 pt-5">
+      <div class="row">
+        <div class="col-lg-5 col-md-12 col-12">
+          <div class="breadcrumb-container">
+            <h6 class="breadcrumb"><a href="#">Home /</a><a href="#"> Electronics </a></h6>
+          </div>
+            <img class="img-fluid w-100" src="<%=product.imgSrc%>" alt="main-image">
+          
+
+          <div class="small-img-group">
+
+            <div class="small-img-col">
+              <img src="<%=product.imgSrc%>"  class="small-img" alt="side-image">
+            </div>
+            <div class="small-img-col">
+              <img src="<%=product.imgSrc%>"  class="small-img" alt="side-image">
+            </div>
+            <div class="small-img-col">
+              <img src="<%=product.imgSrc%>"  class="small-img" alt="side-image">
+            </div>
+            <div class="small-img-col">
+              <img src="<%=product.imgSrc%>"  class="small-img" alt="side-image">
+            </div>
+            <div class="small-img-col">
+              <img src="<%=product.imgSrc%>"  class="small-img" alt="side-image">
+            </div>
+            <div class="small-img-col">
+              <img src="<%=product.imgSrc%>"  class="small-img" alt="side-image">
+            </div>
+            <div class="small-img-col">
+              <img src="<%=product.imgSrc%>"  class="small-img" alt="side-image">
+            </div>
+            <div class="small-img-col">
+              <img src="<%=product.imgSrc%>"  class="small-img" alt="side-image">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-12">
+          <!-- <h6 class="breadcrumb"><a href="#">Home /</a><a href="#"> Categories </a> -->
+          <h3 class="py-4"><%=product.title%></h3>
+          <h2><%=product.price%></h2>
+          <select class="my-3">
+            <option>Select Color</option>
+            <option>Red</option>
+            <option>Blue</option>
+            <option>Aqua</option>
+            <option>Black</option>
+            <option>White</option>
+          </select>
+          <input type="number" value="1">
+          <button class="buy-btn">Add to Cart</button>
+          <button class="wishlist-btn">Add to Wishlist</button> 
+          <h4 class="mt-5 mb-5">Product Details</h4>
+          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc arcu,
+            dignissim sit amet sollicitudin iaculis, vehicula id urna. Sed luctus urna nunc.
+            Donec fermentum, magna sit amet rutrum pretium, turpis dolor molestie diam,
+            ut lacinia diam risus eleifend sapien. Curabitur ac nibh nulla.
+            Maecenas nec augue placerat, viverra tellus non, pulvinar risus.</span>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="related-product" class="my-5 pb-5">
+      <div class="container text-center mt-5 py-5">
+        <a href="#"><h3>Related Product</h3></a>
+        <hr>
+        <p>Here you can check out our new products with fair price on website's name</p>
+      </div>
+      <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+          <img class="img-fluid mb-3" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/1.webp" alt="main-image">
+          <h5 class="p-name">GoPro HERO6 4K Action Camera - Black</h5>
+          <h4 class="p-pric">$790.50</h4>
+          <button class="buy-btn">Buy now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+          <img class="img-fluid mb-3" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/3.webp" alt="main-image">
+          <h5 class="p-name">Xiaomi Redmi 8 Original Global Version 4GB</h5>
+          <h4 class="p-pric">$120.00</h4>
+          <button class="buy-btn">Buy now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+          <img class="img-fluid mb-3" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/5.webp" alt="main-image">
+          <h5 class="p-name">Apple Watch Series 1 Sport Case 38mm Black</h5>
+          <h4 class="p-pric">$790.50</h4>
+          <button class="buy-btn">Buy now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+          <img class="img-fluid mb-3" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/2.webp" alt="main-image">
+          <h5 class="p-name">Canon camera 20x zoom, Black color EOS 2000</h5>
+          <h4 class="p-pric">$320.00</h4>
+          <button class="buy-btn">Buy now</button>
+        </div>
+      </div>
+    </section>
+
+<%- include('partials/footer.ejs') %>

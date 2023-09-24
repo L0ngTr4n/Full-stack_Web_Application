@@ -72,7 +72,9 @@ app.get("/newPassword", (req, res) => {
 });
 
 app.get("/customer", (req, res) => {
-  res.render("customer");
+  productModel.find()
+  .then((products) => res.render("customer", {products}))
+  .catch((error) => console.log(error.message));
 });
 
 app.get("/vendor", (req, res) => {
@@ -80,12 +82,44 @@ app.get("/vendor", (req, res) => {
 });
 
 app.get("/shipper", (req, res) => {
-  res.render("shipper");
+  const orders = [
+    {
+      products: ['Electronic device 1', 'Electronic device 2', 'Electronic device 3'],
+      price: 250,
+      address: 'RMIT University' 
+    },
+    {
+      products: ['Household good 1', 'Household good 2', 'Household good 3'],
+      price: 100,
+      address: 'RMIT University' 
+    },
+    {
+      products: ['Household good 4', 'Household good 5', 'Household good 6'],
+      price: 310,
+      address: 'RMIT University' 
+    },
+  ]
+  
+  res.render("shipper", {orders});
 });
 
 app.get("/add_product", (req, res) => {
   res.render("add_product");
 });
+
+
+app.get('/product/:id', (req, res) => {
+  productModel.findOne({id: req.params.id})
+  .then((product) => {
+    console.log(product);
+    if (!product) {
+      return res.send("Cannot found that ID!");
+    }
+    res.render('electronics_product', {product: product});
+  })
+  .catch((error) => res.send(error));
+});
+
 
 app.get("/footer", (req, res) => {
   res.render("footer");

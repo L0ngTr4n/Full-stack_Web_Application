@@ -10,7 +10,6 @@ const productSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    unique: true,
   },
   
   // imagePath: {
@@ -24,17 +23,13 @@ const productSchema = new mongoose.Schema({
     unique: true,
   },
 
-  link: {
-    type: String,
-    required: true,
-    unique: true,
-
+  id: {
+    type: Number,
+    require: true,
   },
   price: {
     type: String,
     required: true,
-    unique: true,
-
   },
   // category: {
   //   type: mongoose.Schema.Types.ObjectId,
@@ -53,8 +48,8 @@ const productSchema = new mongoose.Schema({
   // },
 });
 
-
-
 // module.exports = mongoose.model("Product", productSchema);
 const productModel = mongoose.model("Product", productSchema);
-module.exports= productModel
+module.exports= productModel;
+
+
