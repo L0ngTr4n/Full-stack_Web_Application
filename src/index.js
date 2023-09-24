@@ -34,7 +34,9 @@ app.use(express.static(publicPath));
 
 //GET
 app.get("/", (req, res) => {
-  res.render("index");
+  productModel.find()
+  .then((products) => res.render("index", {products}))
+  .catch((error) => console.log(error.message));
 });
 
 app.get("/login", (req, res) => {
@@ -83,7 +85,7 @@ app.get("/add_product", (req, res) => {
   res.render("add_product");
 });
 
-app.get("/products", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     // Fetch products from the database using the Product model
     const products = await productModel.find();
