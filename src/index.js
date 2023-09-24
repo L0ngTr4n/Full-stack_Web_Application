@@ -87,18 +87,33 @@ app.get("/add_product", (req, res) => {
   res.render("add_product");
 });
 
-app.get("/", async (req, res) => {
-  try {
-    // Fetch products from the database using the Product model
-    const products = await productModel.find();
-
-    // Render an EJS view to display the products
-    res.render("products", { products: products });
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    // Handle the error and render an error page or redirect as needed
-  }
+app.get("/footer", (req, res) => {
+  res.render("footer");
 });
+
+app.get("/elec_page", (req, res) => {
+  res.render("elec_page");
+});
+
+app.get("/header", (req, res) => {
+  res.render("header");
+});
+
+
+
+
+// app.get("/", async (req, res) => {
+//   try {
+//     // Fetch products from the database using the Product model
+//     const products = await productModel.find();
+
+//     // Render an EJS view to display the products
+//     res.render("products", { products: products });
+//   } catch (error) {
+//     console.error("Error fetching products:", error);
+//     // Handle the error and render an error page or redirect as needed
+//   }
+// });
 
 
 
