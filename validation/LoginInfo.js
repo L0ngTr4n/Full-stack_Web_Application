@@ -13,6 +13,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+<<<<<<< Updated upstream
+=======
+  // profilePicture: {
+  //   data: Buffer, // Store binary image data
+  //   contentType: String, // Store the MIME type (e.g., 'image/jpeg', 'image/png')
+  // },
+>>>>>>> Stashed changes
   email: {
     type: String,
     required: true,

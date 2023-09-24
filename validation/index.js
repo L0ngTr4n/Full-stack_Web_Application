@@ -78,8 +78,12 @@ app.get("/shipper", (req, res) => {
 //POST
 
 app.post("/register", async (req, res) => {
-  const { username, email, password, role } = req.body;
+  const { username, email, password, profilePicture, role } = req.body;
 
+<<<<<<< Updated upstream
+=======
+  // Handle the profile picture upload
+>>>>>>> Stashed changes
   // if (confirm_password != password) {
   //   alert("Password does not match, enter password again.");
   // } else {
@@ -91,6 +95,13 @@ app.post("/register", async (req, res) => {
           email: email,
           // telephone: telephone,
           role: role,
+<<<<<<< Updated upstream
+=======
+          // profilePicture: {
+          //   data: profilePicture.data, // Binary image data
+          //   contentType: profilePicture.mimetype, // MIME type
+          // },
+>>>>>>> Stashed changes
         });
         if (newUser.role == "customer") {
           res.render("customer");
