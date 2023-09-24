@@ -115,7 +115,7 @@ app.get('/product/:id', (req, res) => {
     if (!product) {
       return res.send("Cannot found that ID!");
     }
-    res.render('electronics_product', {product: product});
+    res.render('electronics', {product: product});
   })
   .catch((error) => res.send(error));
 });
