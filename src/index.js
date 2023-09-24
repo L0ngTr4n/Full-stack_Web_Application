@@ -17,7 +17,7 @@ const {
 const productModel = require ("./productInfo")
 
 const connect = require("../DB connect/mongo");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
@@ -150,41 +150,45 @@ app.get("/", async (req, res) => {
 
 app.post("/customer_register", async (req, res) => {
 const { username, email, password, address} = req.body;
-CustomerInfo.exists({ name: username }).then(() => {
-  console.log("user already exists!");
-  res.render("user details already exists");
-})
+// if (CustomerInfo.exists({ name: username })) {
+//   console.log("user already exists!");
+//   res.render("customer_register");
+// }
+// else{
   const newCustomer = new CustomerInfo({
       username: username,
       password: password,
       email: email,
       address: address,
-      
   })
   newCustomer.save();
+  res.render("customer");
+// }
 })
 
 app.post("/shipper_register", async (req, res) => {
   const { username, email, password, dis_hub} = req.body;
-ShipperInfo.exists({ name: username }).then(() => {
-  console.log("user already exists!");
-  res.render("user details already exists");
-})
+// ShipperInfo.exists({ name: username }).then(() => {
+//   console.log("user already exists!");
+//   res.render("user details already exists");
+// })
   const newShipper = new ShipperInfo({
       username: username,
       password: password,
       email: email,
       dis_hub: dis_hub,
   })
-  newShipper.save();
+  newShipper.save()
+  res.render("shipper_register");
 })
 
 app.post("/vendor_register", async (req, res) => {
   const { username, email, password, bus_name, bus_address} = req.body;
-VendorInfo.exists({ name: username }).then(() => {
-  console.log("user already exists!");
-  res.render("user details already exists");
-})
+// VendorInfo.findOne({ name: username }).then(() => {
+//   console.log("user already exists!");
+//   res.render("vendor_register");
+//   return;
+// })
   const newVendor = new VendorInfo({
       username: username,
       password: password,
@@ -193,6 +197,7 @@ VendorInfo.exists({ name: username }).then(() => {
       bus_name: bus_name,
   })
   newVendor.save();
+  res.render("vendor_register");
 })
   // Handle the profile picture upload
   // const profilePicture = req.files.profilePicture;
@@ -220,33 +225,34 @@ VendorInfo.exists({ name: username }).then(() => {
 
 
 app.post("/login", async (req, res) => {
-  const { username, password , role} = req.body;
+  const {username, password} = req.body;
 
-  // Query the database to find the user by username and password
-  Userinfo.findOne({ username: username, password: password })
-    .then((user) => {
-      if (user) {
-        // User with matching username and password exists
-        // Check the user's role and redirect accordingly
-        if (user.role === "customer") {
-          // Redirect to the customer dashboard
-          res.redirect("/customer");
-        } else if (user.role === "vendor") {
-          // Redirect to the vendor dashboard
-          res.redirect("/vendor");
-        } else if (user.role === "shipper") {
-          // Redirect to the shipper dashboard
-          res.redirect("/shipper");
-        }
-      } else {
-        // No matching user found; authentication failed
-        res.render("login", { error: "Invalid username or password" });
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-      res.render("error", { message: "Login failed" });
-    });
+  let customer = await CustomerInfo.findOne({ username, password });
+
+  if(customer) {
+    console.log(customer);
+    res.redirect("/customer");
+    return;
+  }
+
+  let vendor = await VendorInfo.findOne({ username, password });
+  
+  if(vendor) {
+    console.log(vendor);
+    res.redirect("/vendor"); 
+    return;
+  }
+
+  let shipper = await ShipperInfo.findOne({ username, password });
+
+  if(shipper) {
+    console.log(shipper);
+    res.redirect("/shipper");
+    return; 
+  }
+
+  res.render("Login failed!");
+  
 });
 
 app.post("/add_product", async (req, res) => {
