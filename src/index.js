@@ -154,14 +154,14 @@ CustomerInfo.exists({ name: username }).then(() => {
   console.log("user already exists!");
   res.render("user details already exists");
 })
-  const newUser = new Userinfo({
+  const newCustomer = new CustomerInfo({
       username: username,
       password: password,
       email: email,
       address: address,
       
   })
-  newUser.save();
+  newCustomer.save();
 })
 
 app.post("/shipper_register", async (req, res) => {
@@ -170,13 +170,13 @@ ShipperInfo.exists({ name: username }).then(() => {
   console.log("user already exists!");
   res.render("user details already exists");
 })
-  const newUser = new Userinfo({
+  const newShipper = new ShipperInfo({
       username: username,
       password: password,
       email: email,
       dis_hub: dis_hub,
   })
-  newUser.save();
+  newShipper.save();
 })
 
 app.post("/vendor_register", async (req, res) => {
@@ -185,14 +185,14 @@ VendorInfo.exists({ name: username }).then(() => {
   console.log("user already exists!");
   res.render("user details already exists");
 })
-  const newUser = new Userinfo({
+  const newVendor = new VendorInfo({
       username: username,
       password: password,
       email: email,
       bus_address: bus_address,
       bus_name: bus_name,
   })
-  newUser.save();
+  newVendor.save();
 })
   // Handle the profile picture upload
   // const profilePicture = req.files.profilePicture;

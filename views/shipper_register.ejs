@@ -28,7 +28,7 @@ Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
     <div class="container registration-container">
         <div class="card registration-card">
             <h2 class="registration-heading">Shipper Registration</h2>
-            <form action="/register" method="post">
+            <form action="/shipper_register" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" id="username" name="username"
@@ -46,16 +46,16 @@ Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
                         required>
                 </div>
                 <label for="distributionHub">Distribution Hub</label>
-                <select id="distributionHub" name="distributionHub" required>
-                    <option value="hub1">Ha Noi</option>
-                    <option value="hub2">Ho Chi Minh</option>
-                    <option value="hub3">Da Nang</option>
+                <select id="distributionHub" name="dis_hub" required>
+                    <option value="Ha Noi">Ha Noi</option>
+                    <option value="Ho Chi Minh">Ho Chi Minh</option>
+                    <option value="Da Nang">Da Nang</option>
                 </select>
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
                 <hr>
                 <!-- <h4 class="text-center">I am</h4> -->
                 <div class="text-center">
-                    <a href="register" class="btn">Customer</a>
+                    <a href="customer_register" class="btn">Customer</a>
                     <a href="vendor_register" class="btn">Vendor</a>
                 </div>
                 <div class="text-center">
