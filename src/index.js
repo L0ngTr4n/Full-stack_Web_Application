@@ -6,7 +6,9 @@ const ejs = require ("ejs")
 
 
 const {
-  Userinfo,
+  CustomerInfo,
+  VendorInfo,
+  ShipperInfo,
   // CustomerModel,
   // VendorModel,
   // ShipperModel,
@@ -118,19 +120,21 @@ app.post("/register", async (req, res) => {
           password: password,
           email: email,
           // telephone: telephone,
-          role: role,
+          // role: role,
           // profilePicture: {
           //   data: profilePicture.data, // Binary image data
           //   contentType: profilePicture.mimetype, // MIME type
           // },
+          role: String('customer')
         });
-        if (newUser.role == "customer") {
-          res.render("customer");
-        } else if (newUser.role == "vendor") {
-          res.render("vendor");
-        } else {
-          res.render("shipper");
-        }
+        // if (newUser.role == "customer") {
+        //   res.render("customer");
+        // } else if (newUser.role == "vendor") {
+        //   res.render("vendor");
+        // } else {
+        //   res.render("shipper");
+        // }
+        if (username === username)
         newUser
           .save()
           .then(() =>
@@ -144,6 +148,46 @@ app.post("/register", async (req, res) => {
     });
   // }
 });
+
+app.post("/vendor_register", async (req, res) => {
+  const { username, email, password, bus_name, bus_address} = req.body;
+Userinfo.exists({ name: username }).then((result) => {
+  console.log("user already exists!");
+  res.render("user details already exists");
+})
+  const newUser = new Userinfo({
+      username: username,
+      password: password,
+      email: email,
+      role: 'vendor',
+      bus_address: bus_address,
+      bus_name: bus_name,
+  })
+  newUser.save();
+})
+  // Handle the profile picture upload
+  // const profilePicture = req.files.profilePicture;
+
+  // if (confirm_password != password) {
+  //   alert("Password does not match, enter password again.");
+  // } else {
+    
+      // 
+      // if (result != newUser) {
+   
+      //   newUser
+      //     .save()
+      //     .then(() =>
+      //       console.log("Inserted user with username: ", req.body.username)
+      //     )
+      //     .catch((error) => console.log(error));
+      // } 
+      // else {
+        
+    
+//     });
+//     });
+// });
 
 
 app.post("/login", async (req, res) => {
