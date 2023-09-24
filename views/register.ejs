@@ -13,12 +13,6 @@
     <div class="container registration-container">
         <div class="card registration-card">
             <h2 class="registration-heading">Customer Registration</h2>
-
-            <a href="register">customer</a>
-            <a href="shipper_register">shipper</a>
-            <a href="vendor_register">vendor</a>
-
-
             <form action="/register" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -36,12 +30,6 @@
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
                         required>
                 </div>
-                <!-- <div class="form-group">
-                    <label for="telephone">Telephone Number</label>
-                    <input type="tel" class="form-control" id="telephone" name="telephone"
-                        placeholder="Enter your telephone number" required>
-                </div> -->
-
                 <div class="form-group">
                         <label for="role">Role</label>
                         <select class="form-control" id="role" name="role">
@@ -51,6 +39,12 @@
                         </select>
                     </div>
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
+                <hr>
+            <!-- <h4 class="text-center">I am</h4> -->
+            <div class="text-center">
+                <a href="shipper_register" class="btn">Shipper</a>
+                <a href="vendor_register" class="btn">Vendor</a>
+            </div>
             </form>
         </div>
     </div>

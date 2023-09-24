@@ -1,9 +1,10 @@
+
 body {
     background-color: #f8f9fa;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ensures full viewport height */
+    height: 100vh;
 }
 
 .register_container {
@@ -48,4 +49,26 @@ body {
 
 .register_container form button:hover {
     background-color: #0056b3;
+}
+
+/* .btn {
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+} */
+.text-center .btn{
+    text-decoration: underline;
+}
+
+.btn:hover {
+    background-color: #007bff;
+}
+
+.text-center {
+    text-align: center;
 }

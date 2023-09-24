@@ -6,39 +6,48 @@ body {
     height: 100vh; /* Ensures full viewport height */
 }
 
-.register_container {
+.registration-container {
     max-width: 400px;
-    padding: 20px;
+}
+
+.registration-card {
     border: none;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
 }
 
-.register_container h2 {
+.registration-heading {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
 }
 
-.register_container form label {
-    font-weight: bold;
-}
-
-.register_container form input[type="text"],
-.register_container form input[type="password"],
-.register_container form button {
+.form-group {
     margin-bottom: 20px;
 }
 
-.register_container form button {
-    background-color: #007bff;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.form-control {
+    border: 2px solid #007bff;
 }
 
-.register_container form button:hover {
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
     background-color: #0056b3;
+}
+
+.text-center .btn{
+    text-decoration: underline;
+}
+
+.btn:hover {
+    background-color: #007bff;
+}
+
+.text-center {
+    text-align: center;
 }

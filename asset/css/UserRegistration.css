@@ -6,6 +6,11 @@ body {
     height: 100vh; /* Ensures full viewport height */
 }
 
+#distributionHub {
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
 .registration-container {
     max-width: 400px;
 }
@@ -38,4 +43,16 @@ body {
 
 .btn-primary:hover {
     background-color: #0056b3;
+}
+
+.text-center .btn{
+    text-decoration: underline;
+}
+
+/* .btn:hover {
+    background-color: #007bff;
+} */
+
+.text-center {
+    text-align: center;
 }
