@@ -3,13 +3,16 @@ const path = require("path");
 const app = express();
 const ejs = require ("ejs")
 // const mongoose = require("mongoose");
+
+
 const {
-  Userinfo, 
+  Userinfo,
   // CustomerModel,
   // VendorModel,
   // ShipperModel,
 } = require ("./LoginInfo")
 
+const productModel = require ("./productInfo")
 
 const connect = require("../DB connect/mongo");
 const port = process.env.PORT || 3000;
@@ -67,18 +70,41 @@ app.get("/newPassword", (req, res) => {
 app.get("/customer", (req, res) => {
   res.render("customer");
 });
+
 app.get("/vendor", (req, res) => {
   res.render("vendor");
 });
+
 app.get("/shipper", (req, res) => {
   res.render("shipper");
 });
+
+app.get("/add_product", (req, res) => {
+  res.render("add_product");
+});
+
+app.get("/products", async (req, res) => {
+  try {
+    // Fetch products from the database using the Product model
+    const products = await productModel.find();
+
+    // Render an EJS view to display the products
+    res.render("products", { products: products });
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    // Handle the error and render an error page or redirect as needed
+  }
+});
+
 
 
 //POST
 
 app.post("/register", async (req, res) => {
   const { username, email, password, role } = req.body;
+
+  // Handle the profile picture upload
+  const profilePicture = req.files.profilePicture;
 
   // if (confirm_password != password) {
   //   alert("Password does not match, enter password again.");
@@ -91,6 +117,10 @@ app.post("/register", async (req, res) => {
           email: email,
           // telephone: telephone,
           role: role,
+          profilePicture: {
+            data: profilePicture.data, // Binary image data
+            contentType: profilePicture.mimetype, // MIME type
+          },
         });
         if (newUser.role == "customer") {
           res.render("customer");
@@ -144,6 +174,28 @@ app.post("/login", async (req, res) => {
     });
 });
 
+app.post("/add_product", async (req, res) => {
+  const { name, description, price } = req.body;
+
+  // Create a new product document
+  const newProduct = new productModel({
+    name: name,
+    description: description,
+    price: price,
+    // Set other product fields as needed
+  });
+
+  // Save the product to the database
+  newProduct
+    .save()
+    .then(() => {
+      console.log("Product added:", newProduct);
+      res.redirect("/vendor"); // Redirect back to the vendor dashboard
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});
 
 //PORT CONNECT
 app.listen(port, () => {

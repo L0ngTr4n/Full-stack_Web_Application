@@ -1,0 +1,12 @@
+<!-- products.ejs -->
+<h1>Products</h1>
+<ul>
+  <% products.forEach((product) => { %>
+    <li>
+      <h2><%= product.name %></h2>
+      <p>Description: <%= product.description %></p>
+      <p>Price: $<%= product.price %></p>
+      <!-- Add other product details as needed -->
+    </li>
+  <% }); %>
+</ul>
