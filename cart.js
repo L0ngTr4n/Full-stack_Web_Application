@@ -31,7 +31,7 @@ function addProduct(name, price, quantity, imgSrc) {
   productElement.innerHTML = `
     
     <!-- Product Content -->
-    <div class="card-body">
+    <div class="card-body col-12 col-lg-12">
       <div class="d-flex align-items-start border-bottom pb-3">
         <div class="me-4">
           <img src="${imgSrc}" alt class="avatar-lg rounded"> <!-- Display the product image -->
