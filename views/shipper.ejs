@@ -13,4 +13,60 @@ S3938177
 S3978673
 S3978107
 Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
-<h1>shipper page</h1>
+<%- include('partials/header.ejs') %>
+
+<%# Placeholder for order list %>
+<% const orders = [
+  {
+    products: ['Product 1', 'Product 2', 'Product 3'],
+    price: 250,
+    address: 'RMIT University' 
+  },
+  {
+    products: ['Product 4', 'Product 5', 'Product 6'],
+    price: 100,
+    address: 'RMIT University' 
+  },
+  {
+    products: ['Product 7', 'Product 8', 'Product 9'],
+    price: 310,
+    address: 'RMIT University' 
+  },
+] %>
+
+<main>
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb py-2 my-3">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">View Active Orders</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container my-3 py-2">
+    <h2 class="my-3 py-3">My Active Order</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Order number</th>
+          <th scope="col">Products</th>
+          <th scope="col">Price</th>
+          <th scope="col">Delivery Address</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <% for (let i = 0; i < orders.length; i++) { %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= orders[i].products %></td>
+          <td><%= orders[i].price.toFixed(2) %></td>
+          <td><%= orders[i].address %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+
+<%- include('partials/footer.ejs') %>
