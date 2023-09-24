@@ -132,6 +132,11 @@ app.get("/elec_page", (req, res) => {
 app.get("/header", (req, res) => {
   res.render("header");
 });
+app.get("/electronics", (req, res) => {
+  res.render("electronics");
+});
+
+
 
 
 
