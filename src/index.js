@@ -17,7 +17,7 @@ const {
 const productModel = require ("./productInfo")
 
 const connect = require("../DB connect/mongo");
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
