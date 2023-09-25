@@ -135,7 +135,9 @@ app.get("/footer", (req, res) => {
 });
 
 app.get("/elec_page", (req, res) => {
-  res.render("elec_page");
+  productModel.find()
+  .then((products) => res.render("elec_page", {products}))
+  .catch((error) => console.log(error.message));
 });
 
 app.get("/header", (req, res) => {
