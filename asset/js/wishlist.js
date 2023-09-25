@@ -17,42 +17,13 @@ const products = [
         price: "$120.00",
         link: "productpage.html"
     },
-    {
-        imgSrc: "https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/4.webp",
-        title: "Apple iPhone 12 Pro 6.1\" RAM 6GB 512GB Unlocked",
-        price: "$120.00",
-        link: "productpage.html"
-    },
-    {
-        imgSrc: "https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/5.webp",
-        title: "Apple Watch Series 1 Sport Case 38mm Black",
-        price: "$790.50",
-        link: "productpage.html"
-    },
-    {
-        imgSrc: "https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/6.webp",
-        title: "T-shirts with multiple colors, for men and lady",
-        price: "$120.00",
-        link: "productpage.html"
-    },
-    {
-        imgSrc: "https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/7.webp",
-        title: "Gaming Headset 32db Black built-in mic",
-        price: "$99.50",
-        link: "productpage.html"
-    },
-    {
-        imgSrc: "https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/8.webp",
-        title: "T-shirts with multiple colors, for men and lady",
-        price: "$120.00",
-        link: "productpage.html"
-    }
+    // Add more products here...
 ];
 
 function createProductCard(product) {
     const productCard = document.createElement("div");
     productCard.classList.add("card", "border", "shadow-none");
-    
+
     // Create the product card's content
     productCard.innerHTML = `
         <div class="card-body">
@@ -70,8 +41,8 @@ function createProductCard(product) {
                 <div class="flex-shrink-0 ms-2">
                     <ul class="list-inline mb-0 font-size-16">
                         <li class="list-inline-item">
-                            <a href="#" class="text-muted px-1">
-                                <i class="mdi mdi-trash-can-outline"></i>
+                            <a href="#" class="text-muted px-1" onclick="removeProduct('${product.title}')">
+                                <i class="mdi mdi-trash-can-outline"></i> Remove
                             </a>
                         </li>
                     </ul>
@@ -98,6 +69,15 @@ function createProductCard(product) {
     `;
 
     return productCard;
+}
+
+// Function to remove a product by title
+function removeProduct(title) {
+    const productIndex = products.findIndex((product) => product.title === title);
+    if (productIndex !== -1) {
+        products.splice(productIndex, 1); // Remove the product from the array
+        updateProductList(); // Update the product list to reflect the removal
+    }
 }
 
 function populateProductList() {

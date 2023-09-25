@@ -254,6 +254,10 @@ app.get("/shopping_cart", (req,res) => {
   res.render("shopping_cart");
 })
 
+app.get("/wishlist", (req,res) => {
+  res.render("wishlist");
+})
+
 
 
 //PORT CONNECT
