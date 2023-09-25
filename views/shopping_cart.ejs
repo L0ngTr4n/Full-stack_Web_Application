@@ -1,0 +1,266 @@
+<!-- RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: Nguyen Ha Tuan Nguyen
+Nguyen Hai Nguyen
+Le Ha My
+Tran Duc Long
+Nguyen Minh Hieu
+ID: S3978072
+S3978275
+S3938177
+S3978673
+S3978107
+Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>My cart page</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="wishlist.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
+    integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <%- include('header.ejs') %>
+    <!-- Feature -->
+    <div class="container">
+      <div class="col-xl-12">
+        <div id="productContainer">
+          <!-- This is where the products will be dynamically added -->
+        </div>
+      </div>
+      <!-- summary section -->
+      <div class="col-xl-12">
+        <div class="mt-5 mt-lg-0">
+          <div class="card border shadow-none">
+            <div class="card-header bg-transparent border-bottom py-3 px-4">
+              <h5 class="font-size-16 mb-0">Order Summary <span class="float-end">#MN0124</span></h5>
+            </div>
+            <div class="col-md-3">
+              <div class="mt-3">
+                <p class="text-muted mb-2">Shipping Location:</p>
+                <select class="form-select form-select-sm w-xl" id="location" onchange="updateShippingCharge()">
+                  <option value="Others">Others</option>
+                  <option value="Da Nang">Da Nang</option>
+                  <option value="Hanoi">Hanoi</option>
+                  <option value="Ho Chi Minh">Ho Chi Minh</option>
+                </select>
+              </div>
+            </div>
+            <div class="card-body p-4 pt-2">
+              <div class="table-responsive">
+                <table class="table mb-0">
+                  <tbody>
+                    <tr>
+                      <td>Sub Total :</td>
+                      <td class="text-end" id="subTotal">$ 0</td>
+                    </tr>
+                    <tr>
+                      <td>Discount :</td>
+                      <td class="text-end" id="discount">- $ 0</td>
+                    </tr>
+                    <tr>
+                      <td>Shipping Charge :</td>
+                      <td class="text-end" id="shippingCharge">$ 0</td>
+                    </tr>
+                    <tr>
+                      <td>Estimated Tax (10% Tax Rate):</td>
+                      <td class="text-end" id="tax">$ 0</td>
+                    </tr>
+                    <tr class="bg-light">
+                      <th>Total :</th>
+                      <td class="text-end">
+                        <span class="fw-bold" id="total">$ 0</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of summary box -->
+      <div class="row my-4">
+        <div class="col-sm-6">
+          <a href="ecommerce-products.html" class="btn btn-link text-muted">
+            <i class="mdi mdi-arrow-left me-1"></i> Continue Shopping </a>
+        </div>
+        <div class="col-sm-6">
+          <div class="text-sm-end mt-2 mt-sm-0">
+            <a href="ecommerce-checkout.html" class="btn btn-success">
+              <i class="mdi mdi-cart-outline me-1"></i> Confirm your order </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-muted mt-3" style="background-color: #f5f5f5;">
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start pt-4 pb-4">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-12 col-lg-3 col-sm-12 mb-2">
+              <!-- Content -->
+              <a href="https://mdbootstrap.com/" target="_blank" class="">
+                <img src="asset\img\Logo.png" height="35" />
+              </a>
+              <p class="mt-2 text-dark">
+                © 2023 Copyright: Dragon Store
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-6 col-sm-4 col-lg-2">
+              <!-- Links -->
+              <h6 class="text-uppercase text-dark fw-bold mb-2">
+                Store
+              </h6>
+              <ul class="list-unstyled mb-4">
+                <li><a class="text-muted" href="#">About us</a></li>
+                <li><a class="text-muted" href="#">Find store</a></li>
+                <li><a class="text-muted" href="#">Categories</a></li>
+                <li><a class="text-muted" href="#">Blogs</a></li>
+              </ul>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-6 col-sm-4 col-lg-2">
+              <!-- Links -->
+              <h6 class="text-uppercase text-dark fw-bold mb-2">
+                Information
+              </h6>
+              <ul class="list-unstyled mb-4">
+                <li><a class="text-muted" href="#">Help center</a></li>
+                <li><a class="text-muted" href="#">Money refund</a></li>
+                <li><a class="text-muted" href="#">Shipping info</a></li>
+                <li><a class="text-muted" href="#">Refunds</a></li>
+              </ul>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-6 col-sm-4 col-lg-2">
+              <!-- Links -->
+              <h6 class="text-uppercase text-dark fw-bold mb-2">
+                Support
+              </h6>
+              <ul class="list-unstyled mb-4">
+                <li><a class="text-muted" href="#">Help center</a></li>
+                <li><a class="text-muted" href="#">Documents</a></li>
+                <li><a class="text-muted" href="#">Account restore</a></li>
+                <li><a class="text-muted" href="#">My orders</a></li>
+              </ul>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-12 col-sm-12 col-lg-3">
+              <!-- Links -->
+              <h6 class="text-uppercase text-dark fw-bold mb-2">Newsletter</h6>
+              <p class="text-muted">Stay in touch with latest updates about our products and offers</p>
+              <div class="input-group mb-3">
+                <input type="email" class="form-control border" placeholder="Email" aria-label="Email"
+                  aria-describedby="button-addon2" />
+                <button class="btn btn-light border shadow-0" type="button" id="button-addon2"
+                  data-mdb-ripple-color="dark">
+                  Join
+                </button>
+              </div>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <div class="">
+        <div class="container">
+          <div class="d-flex justify-content-between py-4 border-top">
+            <!--- payment --->
+            <div>
+              <i class="fab fa-lg fa-cc-visa text-dark"></i>
+              <i class="fab fa-lg fa-cc-amex text-dark"></i>
+              <i class="fab fa-lg fa-cc-mastercard text-dark"></i>
+              <i class="fab fa-lg fa-cc-paypal text-dark"></i>
+            </div>
+            <!--- payment --->
+
+            <!--- language selector --->
+            <div class="dropdown dropup">
+              <a class="dropdown-toggle text-dark" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown"
+                aria-expanded="false"> <i class="flag-united-kingdom flag m-0 me-1"></i>English </a>
+
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English <i
+                      class="fa fa-check text-success ms-2"></i></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+                </li>
+              </ul>
+            </div>
+            <!--- language selector --->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>
