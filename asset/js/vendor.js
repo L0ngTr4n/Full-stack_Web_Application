@@ -6,7 +6,7 @@ const products = [
         price: "790.50",
         link: "/electronics",
         quantity: "1",
-        index: "1"
+        productIndex: "1"
     },
     {
         imgSrc: "https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/2.webp",
@@ -123,6 +123,7 @@ function updateProductList() {
 // Function to handle clicking the "Edit" button for a product
 function editProduct(productIndex) {
     const product = products[productIndex];
+    console.log("test");
 
     // Check if the edit form modal exists
     const editModal = document.getElementById("edit-product-modal");
@@ -154,6 +155,36 @@ function editProduct(productIndex) {
         // Display the edit form modal
         editModal.style.display = "block";
     }
+}
+
+// Function to handle clicking the "Save Changes" button
+function saveChanges() {
+    // Get the index of the product being edited from the hidden input field
+    const productIndex = parseInt(document.getElementById("product-index-to-edit").value);
+
+    // Retrieve the updated values from the input fields in the edit modal
+    const editedTitle = document.getElementById("edited-title").value;
+    const editedPrice = document.getElementById("edited-price").value;
+    const editedImage = document.getElementById("edited-image").value;
+    const editedQuantity = document.getElementById("edited-quantity").value;
+
+    // Update the product in the array with the new values
+    if (!isNaN(productIndex) && productIndex >= 0 && productIndex < products.length) {
+        const product = products[productIndex];
+        product.title = editedTitle;
+        product.price = editedPrice;
+        product.imgSrc = editedImage;
+        product.quantity = editedQuantity;
+    }
+
+    // Close the edit modal
+    const editModal = document.getElementById("edit-product-modal");
+    if (editModal) {
+        editModal.style.display = "none";
+    }
+
+    // Update the product list to reflect the changes
+    updateProductList();
 }
 
 // Call the function to update the product list when the page loads
