@@ -1,23 +1,34 @@
+// RMIT University Vietnam
+// Course: COSC2430 Web Programming
+// Semester: 2023A
+// Assessment: Assignment 2
+// Author: Nguyen Ha Tuan Nguyen
+// Nguyen Hai Nguyen
+// Le Ha My
+// Tran Duc Long
+// Nguyen Minh Hieu
+// ID: S3978072
+// S3978275
+// S3938177
+// S3978673
+// S3978107
+// Acknowledgement: ChatGPT, Claude, bootstrap, w3school.
+
 const express = require("express");
 const path = require("path");
 const app = express();
-const ejs = require ("ejs")
-// const mongoose = require("mongoose");
-
+const ejs = require ("ejs");
 
 const {
   CustomerInfo,
   VendorInfo,
   ShipperInfo,
-  // CustomerModel,
-  // VendorModel,
-  // ShipperModel,
 } = require ("./LoginInfo")
 
 const productModel = require ("./productInfo")
 
 const connect = require("../DB connect/mongo");
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 1234;
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
@@ -62,10 +73,6 @@ app.get("/shipper_register", (req, res) => {
   // Render the shipper.html view
   res.render("shipper_register");
 });
-
-// app.get("/forgotPassword", (req, res) => {
-//   res.render("forgotPassword");
-// });
 
 app.get("/newPassword", (req, res) => {
   res.render("newPassword");
@@ -141,76 +148,11 @@ app.get("/electronics", (req, res) => {
 
 
 
-
-
-// app.get("/", async (req, res) => {
-//   try {
-//     // Fetch products from the database using the Product model
-//     const products = await productModel.find();
-
-//     // Render an EJS view to display the products
-//     res.render("products", { products: products });
-//   } catch (error) {
-//     console.error("Error fetching products:", error);
-//     // Handle the error and render an error page or redirect as needed
-//   }
-// });
-
-
-
 //POST
-
-// app.post("/customer_register", async (req, res) => {
-//   const { username, email, password, role } = req.body;
-
-//   // Handle the profile picture upload
-//   // const profilePicture = req.files.profilePicture;
-
-//   // if (confirm_password != password) {
-//   //   alert("Password does not match, enter password again.");
-//   // } else {
-//     Userinfo.exists({ name: username }).then((result) => {
-//       if (result === null) {
-//         const newUser = new Userinfo({
-//           username: username,
-//           password: password,
-//           email: email,
-//           // telephone: telephone,
-//           // role: role,
-//           // profilePicture: {
-//           //   data: profilePicture.data, // Binary image data
-//           //   contentType: profilePicture.mimetype, // MIME type
-//           // },
-//         });
-//         // if (newUser.role == "customer") {
-//         //   res.render("customer");
-//         // } else if (newUser.role == "vendor") {
-//         //   res.render("vendor");
-//         // } else {
-//         //   res.render("shipper");
-//         // }
-//         if (username === username)
-//         newUser
-//           .save()
-//           .then(() =>
-//             console.log("Inserted user with username: ", req.body.username)
-//           )
-//           .catch((error) => console.log(error));
-//       } else {
-//         console.log("user already exists!");
-//         res.render("user details already exists");
-//       }
-//     });
-//   // }
-// });
 
 app.post("/customer_register", async (req, res) => {
 const { username, email, password, address} = req.body;
-// if (CustomerInfo.exists({ name: username })) {
-//   console.log("user already exists!");
-//   res.render("customer_register");
-// }
-// else{
+
   const newCustomer = new CustomerInfo({
       username: username,
       password: password,
@@ -224,10 +166,7 @@ const { username, email, password, address} = req.body;
 
 app.post("/shipper_register", async (req, res) => {
   const { username, email, password, dis_hub} = req.body;
-// ShipperInfo.exists({ name: username }).then(() => {
-//   console.log("user already exists!");
-//   res.render("user details already exists");
-// })
+
   const newShipper = new ShipperInfo({
       username: username,
       password: password,
@@ -240,11 +179,7 @@ app.post("/shipper_register", async (req, res) => {
 
 app.post("/vendor_register", async (req, res) => {
   const { username, email, password, bus_name, bus_address} = req.body;
-// VendorInfo.findOne({ name: username }).then(() => {
-//   console.log("user already exists!");
-//   res.render("vendor_register");
-//   return;
-// })
+  
   const newVendor = new VendorInfo({
       username: username,
       password: password,
@@ -255,29 +190,7 @@ app.post("/vendor_register", async (req, res) => {
   newVendor.save();
   res.render("vendor");
 })
-  // Handle the profile picture upload
-  // const profilePicture = req.files.profilePicture;
 
-  // if (confirm_password != password) {
-  //   alert("Password does not match, enter password again.");
-  // } else {
-    
-      // 
-      // if (result != newUser) {
-   
-      //   newUser
-      //     .save()
-      //     .then(() =>
-      //       console.log("Inserted user with username: ", req.body.username)
-      //     )
-      //     .catch((error) => console.log(error));
-      // } 
-      // else {
-        
-    
-//     });
-//     });
-// });
 
 
 app.post("/login", async (req, res) => {
@@ -307,7 +220,7 @@ app.post("/login", async (req, res) => {
     return; 
   }
 
-  res.render("login");
+  res.send("validation failed");
   
 });
 

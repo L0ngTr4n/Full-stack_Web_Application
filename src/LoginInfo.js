@@ -1,3 +1,18 @@
+// RMIT University Vietnam
+// Course: COSC2430 Web Programming
+// Semester: 2023A
+// Assessment: Assignment 2
+// Author: Nguyen Ha Tuan Nguyen
+// Nguyen Hai Nguyen
+// Le Ha My
+// Tran Duc Long
+// Nguyen Minh Hieu
+// ID: S3978072
+// S3978275
+// S3938177
+// S3978673
+// S3978107
+// Acknowledgement: ChatGPT, Claude, bootstrap, w3school.
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt")
 const Schema = mongoose.Schema;
@@ -11,33 +26,10 @@ const Customer = new mongoose.Schema({
   },
   password: {
     type: String,
-    // validate: {
-    //   validator: function (value) {
-    //     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).+$/;
-    //     return regex.test(value);
-    //   },
-
-    //   required: true,
-
-    //   minlength:8,
-
-    //   maxlength:20
-    // },
-    // name: {
-    //   type: String,
-    //   required: true,
-
-    //   message: 'The password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.'
-
-    // },
     required: true,
-    // minlength: 8,
-    // maxlength: 20
+   
   },
-  // profilePicture: {
-  //   data: Buffer, // Store binary image data
-  //   contentType: String, // Store the MIME type (e.g., 'image/jpeg', 'image/png')
-  // },
+ 
   email: {
     type: String,
     required: true,
@@ -110,40 +102,7 @@ const Vendor = new mongoose.Schema({
   
 });
 
-// // Create a CustomerSchema as a discriminator
-// const CustomerSchema = UserSchema.discriminator("Customer",new mongoose.Schema({
-//     // Add customer-specific fields here
-//     address: {
-//     type: String,
-//     required: true,
-//     },
-//   })
-// );
 
-// // Create a VendorSchema as a discriminator
-// const VendorSchema = UserSchema.discriminator("Vendor",new mongoose.Schema({
-//     // Add vendor-specific fields here
-//     businessName: {
-//       type: String,
-//       required: true,
-//     },
-//     businessAddress: {
-//       type: String,
-//       required: true,
-//     },
-//   })
-// );
-
-// // Create a ShipperSchema as a discriminator
-// const ShipperSchema = UserSchema.discriminator("Shipper",new mongoose.Schema({
-//     // Add shipper-specific fields here
-//     distributionHub: {
-//       type: String,
-//       enum: ["Ha Noi", "Da Nang", "Ho Chi Minh"],
-//       required: true,
-//     },
-//   })
-// );
 
 
 
