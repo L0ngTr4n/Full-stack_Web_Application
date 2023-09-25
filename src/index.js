@@ -233,7 +233,7 @@ app.post("/shipper_register", async (req, res) => {
       dis_hub: dis_hub,
   })
   newShipper.save()
-  res.render("shipper_register");
+  res.render("shipper");
 })
 
 app.post("/vendor_register", async (req, res) => {
@@ -251,7 +251,7 @@ app.post("/vendor_register", async (req, res) => {
       bus_name: bus_name,
   })
   newVendor.save();
-  res.render("vendor_register");
+  res.render("vendor");
 })
   // Handle the profile picture upload
   // const profilePicture = req.files.profilePicture;
