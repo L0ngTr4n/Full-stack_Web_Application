@@ -1,0 +1,30 @@
+<!-- RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: Nguyen Ha Tuan Nguyen
+Nguyen Hai Nguyen
+Le Ha My
+Tran Duc Long
+Nguyen Minh Hieu
+ID: S3978072
+S3978275
+S3938177
+S3978673
+S3978107
+Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
+<% products.forEach((product)=> { %>
+
+  <div class="card w-100 my-2 shadow-2-strong">
+    <img src=" <%= product.imgSrc %> " class="card-img-top" style="aspect-ratio: 1 / 1" />
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title"><%= product.title %></h5>
+      <p class="card-text"><%= product.price %></p>
+      <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+        <a href="/product/<%= product.id %>" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+        <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i
+            class="fas fa-heart fa-lg text-secondary px-1"></i></a>
+      </div>
+    </div>
+  </div>
+<% }); %>

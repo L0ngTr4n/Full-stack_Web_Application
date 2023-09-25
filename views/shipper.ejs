@@ -1,0 +1,134 @@
+<!-- RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: Nguyen Ha Tuan Nguyen
+Nguyen Hai Nguyen
+Le Ha My
+Tran Duc Long
+Nguyen Minh Hieu
+ID: S3978072
+S3978275
+S3938177
+S3978673
+S3978107
+Acknowledgement: ChatGPT, Claude, bootstrap, w3school. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Home page</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/vendor.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header>
+        <!-- Jumbotron -->
+        <div class="p-3 text-center bg-white border-bottom">
+            <div class="container">
+                <div class="row gy-3">
+                    <!-- Left elements -->
+                    <div class="col-lg-2 col-sm-4 col-4">
+                        <a href="https://mdbootstrap.com/" target="_blank" class="float-start">
+                            <img src="/img/Logo.png" id="Logo">
+                        </a>
+                    </div>
+                    <!-- Left elements -->
+
+                    <!-- Center elements -->
+                    <div class="order-lg-last col-lg-5 col-sm-8 col-8">
+                        <div class="d-flex float-end">
+                            <div class="dropdown" id="profile-dropdown">
+                                <a class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center"
+                                    id="dropdown-trigger">
+                                    <i class="fas fa-user-alt m-1 me-md-2"></i>
+                                    <p class="d-none d-md-block mb-0">Profile</p>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown-trigger">
+                                    <a href="\login" class="dropdown-item" target="_blank">View my profile</a>
+                                    <a href="/login" class="dropdown-item" target="_blank">Logout</a>
+                                    <!-- Add more dropdown items here :3 -->
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Center elements -->
+
+                    <!-- Right elements -->
+                    <div class="col-lg-5 col-md-12 col-12">
+                        <div class="input-group float-center">
+                            <div class="form-outline">
+                                <input type="search" id="form1" class="form-control" placeholder="Search" />
+                            </div>
+                            <button type="button" class="btn btn-primary shadow-0">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Right elements -->
+                </div>
+            </div>
+        </div>
+        <!-- Jumbotron -->
+    </header>
+
+<%# Placeholder for order list %>
+<% const orders = [
+  {
+    products: ['Electronic device 1', 'Electronic device 2', 'Electronic device 3'],
+    price: 250,
+    address: 'RMIT University' 
+  },
+  {
+    products: ['Household good 1', 'Household good 2', 'Household good 3'],
+    price: 100,
+    address: 'RMIT University' 
+  },
+  {
+    products: ['Household good 4', 'Household good 5', 'Household good 6'],
+    price: 310,
+    address: 'RMIT University' 
+  },
+] %>
+
+<main>
+  <div class="container my-3 py-5">
+    <h2 class="my-3 py-3">My Order</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Order number</th>
+          <th scope="col">Products</th>
+          <th scope="col">Price</th>
+          <th scope="col">Delivery Address</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <% for (let i = 0; i < orders.length; i++) { %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= orders[i].products %></td>
+          <td><%= orders[i].price.toFixed(2) %></td>
+          <td><%= orders[i].address %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<%- include('footer.ejs') %>

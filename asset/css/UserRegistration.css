@@ -1,0 +1,82 @@
+/* RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 2
+Author: Nguyen Ha Tuan Nguyen
+Nguyen Hai Nguyen
+Le Ha My
+Tran Duc Long
+Nguyen Minh Hieu
+ID: S3978072
+S3978275
+S3938177
+S3978673
+S3978107
+Acknowledgement: ChatGPT, Claude, bootstrap, w3school. */
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures full viewport height */
+}
+
+#distributionHub {
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
+.registration-container {
+    max-width: 400px;
+}
+
+.registration-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.registration-heading {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    border: 2px solid #007bff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    margin-top: 20px;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.text-center {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.text-center .btn{
+    text-decoration: none;
+    border: 2px solid #007bff;
+    color: #2b2b2b;
+}
+
+.btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
