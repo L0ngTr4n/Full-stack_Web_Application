@@ -73,7 +73,9 @@ app.get("/newPassword", (req, res) => {
 
 app.get("/customer", (req, res) => {
   productModel.find()
-  .then((products) => res.render("customer", {products}))
+  .then((products) => {
+    console.log(products);
+    res.render("customer", {products});})
   .catch((error) => console.log(error.message));
 });
 
