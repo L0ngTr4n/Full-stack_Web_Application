@@ -17,7 +17,7 @@ const {
 const productModel = require ("./productInfo")
 
 const connect = require("../DB connect/mongo");
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3001;
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
@@ -132,6 +132,11 @@ app.get("/elec_page", (req, res) => {
 app.get("/header", (req, res) => {
   res.render("header");
 });
+app.get("/electronics", (req, res) => {
+  res.render("electronics");
+});
+
+
 
 
 
@@ -300,7 +305,7 @@ app.post("/login", async (req, res) => {
     return; 
   }
 
-  res.render("Login failed!");
+  res.send("Login failed!");
   
 });
 

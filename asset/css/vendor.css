@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f2f2f2; */
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* Center the "My Products" section */
+#product-list {
+    text-align: center;
+}
+/* 
+Display products in 4 columns on large screens
+@media (min-width: 992px) {
+    #product-row > div {
+        flex: 0 0 calc(25% - 1rem);
+        max-width: calc(25% - 1rem);
+    }
+} */
