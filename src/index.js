@@ -305,7 +305,7 @@ app.post("/login", async (req, res) => {
     return; 
   }
 
-  res.send("Login failed!");
+  res.render("login");
   
 });
 
