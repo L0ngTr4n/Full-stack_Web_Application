@@ -16,7 +16,7 @@ Acknowledgement: ChatGPT, Claude, bootstrap, w3school.
 # Full-stack_Web_Application
 COSC2430 - Web Programming group project
 Github link:https://github.com/L0ngTr4n/Full-stack_Web_Application
-Youtube link: 
+Youtube link: https://www.youtube.com/watch?v=Xcj0vHPUjyM
 
 User account 
  Customer
